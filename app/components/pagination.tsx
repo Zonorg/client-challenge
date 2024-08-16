@@ -1,4 +1,4 @@
-import { LIMIT, TOTAL_POSTS } from "@/app/page";
+import { LIMIT, TOTAL_POSTS } from "../page";
 
 type PaginationProps = {
   page: number;
