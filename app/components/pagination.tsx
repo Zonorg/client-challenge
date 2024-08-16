@@ -1,9 +1,10 @@
-import { LIMIT, TOTAL_POSTS } from "../page";
-
 type PaginationProps = {
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
 };
+
+export const limit = 10;
+const total_posts = 100;
 
 const Pagination = ({ page, setPage }: PaginationProps) => {
   const handlePrevious = () => setPage((prevPage) => Math.max(prevPage - 1, 1));
@@ -14,7 +15,7 @@ const Pagination = ({ page, setPage }: PaginationProps) => {
       <button onClick={handlePrevious} disabled={page === 1}>
         Anterior
       </button>
-      <button onClick={handleNext} disabled={page === TOTAL_POSTS / LIMIT}>
+      <button onClick={handleNext} disabled={page === total_posts / limit}>
         Siguiente
       </button>
     </div>

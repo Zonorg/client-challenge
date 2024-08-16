@@ -7,10 +7,7 @@ import { LuLoader2 } from "react-icons/lu";
 import { IPost } from "@/types";
 
 import Post from "./components/post";
-import Pagination from "./components/pagination";
-
-export const LIMIT = 10;
-export const TOTAL_POSTS = 100;
+import Pagination, { limit } from "./components/pagination";
 
 export default function Home() {
   const [posts, setPosts] = useState<IPost[]>([]);
@@ -20,7 +17,7 @@ export default function Home() {
   const getPosts = async (page: number) => {
     try {
       setLoading(true);
-      const response = await axios.get<IPost[]>(API_URL + `/posts?_page=${page}&_limit=${LIMIT}`);
+      const response = await axios.get<IPost[]>(API_URL + `/posts?_page=${page}&_limit=${limit}`);
       setPosts(response.data);
     } catch (error) {
       console.log(error);
