@@ -40,8 +40,8 @@ export default function Register() {
   };
   return (
     <div className="content">
+      <h1>Registro de usuario</h1>
       <form className="form" onSubmit={handleRegister}>
-        <h1>Registro de usuario</h1>
         <input type="text" id="username" name="username" placeholder="Nombre de usuario" />
         <input type="password" id="password" name="password" placeholder="Contraseña" />
         <input type="password" id="repeat-password" name="repeat-password" placeholder="Repetir contraseña" />

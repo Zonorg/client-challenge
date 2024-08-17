@@ -1,5 +1,6 @@
 import { IPost } from "@/types";
 import DeletePost from "./delete-post";
+import { useState } from "react";
 
 type PostProps = {
   post: IPost;
@@ -8,6 +9,12 @@ type PostProps = {
 
 const Post = ({ post, onDelete }: PostProps) => {
   const { userId, title, body } = post || {};
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Función para manejar el click en la fila
+  const handleRowClick = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   // Función para truncar el texto si es más largo que el límite
   const truncateText = (text: string, limit: number) => {
@@ -15,10 +22,10 @@ const Post = ({ post, onDelete }: PostProps) => {
   };
 
   return (
-    <tr>
+    <tr onClick={handleRowClick} className="cursor-pointer">
       <td>{userId ? userId : "N/A"}</td>
-      <td>{truncateText(title, 30)}</td>
-      <td>{truncateText(body, 30)}</td>
+      <td>{isExpanded ? title : truncateText(title, 30)}</td>
+      <td>{isExpanded ? body : `${body.slice(0, 30)}...`}</td>
       {typeof post.id !== "number" && onDelete && (
         <td>
           <DeletePost postId={post._id} onDelete={onDelete} />

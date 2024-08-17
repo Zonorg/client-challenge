@@ -24,12 +24,10 @@ export default function CreatePost({ onPostCreated }: CreatePostProps) {
     }
   };
   return (
-    <div className="data">
-      <form className="form" onSubmit={handleSubmit}>
-        <input type="text" name="title" id="title" placeholder="Nombre del post" />
-        <textarea name="body" id="body" placeholder="Descripción" />
-        <button type="submit">Crear publicación</button>
-      </form>
-    </div>
+    <form className="form" onSubmit={handleSubmit}>
+      <input type="text" name="title" id="title" placeholder="Nombre del post" />
+      <textarea name="body" id="body" placeholder="Descripción" />
+      <button type="submit">Crear publicación</button>
+    </form>
   );
 }

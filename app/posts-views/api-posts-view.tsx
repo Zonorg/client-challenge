@@ -6,13 +6,15 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import { IPost } from "@/types";
-import Post from "./post";
-import Pagination, { limit } from "./pagination";
+import Post from "../components/post";
+import Pagination, { limit } from "../components/pagination";
 import { LuLoader2 } from "react-icons/lu";
+import FilterInput from "../components/filter-input";
 
 export default function ApiPosts() {
   const router = useRouter();
   const [posts, setPosts] = useState<IPost[]>([]);
+  const [filteredPosts, setFilteredPosts] = useState<IPost[]>([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
@@ -27,6 +29,7 @@ export default function ApiPosts() {
       setLoading(true);
       const response = await axios.get<IPost[]>(API_URL + `/posts?_page=${page}&_limit=${limit}`);
       setPosts(response.data);
+      setFilteredPosts(response.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -39,7 +42,11 @@ export default function ApiPosts() {
   }, [page]);
 
   return (
-    <div className="data">
+    <div className="content">
+      <h2 className="text-center text-xl font-semibold">Publicaciones de la API</h2>
+
+      <FilterInput data={posts} filterKeys={["title", "body"]} onFilter={setFilteredPosts} />
+
       <Pagination page={page} setPage={setPage} />
 
       {loading ? (
@@ -56,7 +63,7 @@ export default function ApiPosts() {
             </tr>
           </thead>
           <tbody>
-            {posts.map((post) => (
+            {filteredPosts.map((post) => (
               <Post key={post.id} post={post} />
             ))}
           </tbody>

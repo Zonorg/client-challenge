@@ -5,13 +5,18 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Post from "./post";
 import { IPost } from "@/types";
+import FilterInput from "./filter-input";
 
 export default function GetCreatedPosts() {
   const [posts, setPosts] = useState<IPost[]>([]);
+
+  const [filteredPosts, setFilteredPosts] = useState<IPost[]>([]);
+
   const getPosts = async () => {
     try {
       const response = await axios.get(API_URL + "/created-posts");
       setPosts(response.data);
+      setFilteredPosts(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -23,6 +28,8 @@ export default function GetCreatedPosts() {
 
   return (
     <div className="flex flex-col gap-4">
+      <FilterInput data={posts} filterKeys={["title", "body"]} onFilter={setFilteredPosts} />
+
       <table className="table">
         <thead>
           <tr>
@@ -33,8 +40,8 @@ export default function GetCreatedPosts() {
           </tr>
         </thead>
         <tbody>
-          {posts.map((post) => (
-            <Post key={post.id} post={post} onDelete={getPosts}/>
+          {filteredPosts.map((post) => (
+            <Post key={post.id} post={post} onDelete={getPosts} />
           ))}
         </tbody>
       </table>

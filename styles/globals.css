@@ -6,16 +6,16 @@ body {
   @apply text-zinc-900 bg-zinc-50;
 }
 
-.home {
+.content {
   @apply flex flex-col items-center gap-5;
 }
 
-.content {
-  @apply flex flex-col items-center gap-2;
+.content h1 {
+  @apply font-medium text-3xl;
 }
 
-.content h1 {
-  @apply font-medium text-4xl;
+.content h2 {
+  @apply font-medium text-3xl;
 }
 
 .form {
@@ -55,14 +55,10 @@ body {
 .form button:hover {
   @apply text-zinc-50;
 }
-/* Contenedor home */
-.data {
-  @apply flex flex-col justify-center items-center gap-2;
-}
 
 /* Estilos para la tabla de datos*/
 .table {
-  @apply border border-gray-300 text-sm;
+  @apply border border-gray-300 text-sm max-w-xl;
 }
 
 .table thead th {

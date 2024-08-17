@@ -12,3 +12,11 @@ export interface IPost {
   body: string;
   userId?: number;
 }
+
+
+export interface IFilterInputProps {
+  data: any[];
+  filterKeys: string[]; // Array de claves para filtrar (ejemplo: ['title', 'body'])
+  onFilter: (filteredData: any[]) => void;
+  placeholder?: string;
+}
