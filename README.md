@@ -55,7 +55,7 @@ Este proyecto se desarrolla utilizando Node/Express y React con TypeScript tanto
    npm start
    ```
 
-- El backend estará corriendo en http://localhost:8080.
+- El backend estará corriendo en http://localhost:8080
 
 ### Frontend
 
@@ -95,3 +95,7 @@ Este proyecto se desarrolla utilizando Node/Express y React con TypeScript tanto
 - **Backend**: https://server-challenge.onrender.com/
 
 *Es probable que el backend tarde unos minutos en cargar, ya que es un servidor gratuito y se cierra al haber inactividad.
+
+## Documentación de Swagger
+
+- **Por defecto se encontrará en la ruta**: http://localhost:8080/api/v1/docs/
