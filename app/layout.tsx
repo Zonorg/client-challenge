@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import clsx from "clsx";
+import Navbar from "./components/navbar";
 
-import "./globals.css";
+import clsx from "clsx";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: {
@@ -24,6 +25,7 @@ export default function RootLayout({
       <head />
       <body className={clsx("min-h-screen bg-background font-sans antialiased")}>
         <div className="relative flex flex-col h-screen">
+          <Navbar />
           <main className="container mx-auto max-w-7xl pt-8 px-6 flex-grow">{children}</main>
         </div>
       </body>

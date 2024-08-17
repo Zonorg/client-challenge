@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-zinc-900 bg-zinc-50;
+}
+
+.home {
+  @apply flex flex-col items-center gap-5;
+}
+
+.content {
+  @apply flex flex-col items-center gap-2;
+}
+
+.content h1 {
+  @apply font-medium text-4xl;
+}
+
+.form {
+  @apply flex flex-col justify-center items-center gap-3 p-5 shadow-md w-72;
+}
+
+.form input {
+  @apply border bg-transparent border-gray-400 px-2 py-1 w-full;
+}
+
+.form textarea {
+  @apply border bg-transparent border-gray-400 px-2 py-1 w-full h-24;
+}
+
+/* Aplicando estilos básicos y transiciones */
+.form button {
+  @apply flex items-center gap-2 relative border border-zinc-900 overflow-hidden bg-zinc-50 text-zinc-800 text-lg px-4 py-2 transition-colors duration-300;
+  position: relative; /* Asegura que el pseudo-elemento se posicione correctamente */
+  z-index: 1; /* Asegura que el texto esté encima del pseudo-elemento */
+}
+
+/* Estilo del pseudo-elemento para el efecto de transición de color */
+.form button::before {
+  content: "";
+  @apply absolute inset-0 bg-blue-500 border;
+  @apply transform -translate-x-full;
+  transition: transform 0.3s ease;
+  z-index: -1; /* Coloca el pseudo-elemento detrás del texto */
+}
+
+/* Transición del pseudo-elemento al pasar el cursor */
+.form button:hover::before {
+  @apply translate-x-0;
+}
+
+/* Estilo para cambiar el color del texto al pasar el cursor */
+.form button:hover {
+  @apply text-zinc-50;
+}
+/* Contenedor home */
+.data {
+  @apply flex flex-col justify-center items-center gap-2;
+}
+
+/* Estilos para la tabla de datos*/
+.table {
+  @apply border border-gray-300 text-sm;
+}
+
+.table thead th {
+  @apply bg-blue-100 border border-gray-300 text-blue-800 p-2 text-left;
+}
+
+.table tbody td {
+  @apply border border-gray-300 text-gray-800 p-2;
+}
+
+/* Estilos para la paginación */
+.pagination {
+  @apply flex gap-2;
+}
+
+.pagination button {
+  @apply bg-blue-500 text-white px-4 py-2 rounded-full transition-all duration-300 hover:brightness-90;
+}
+
+.pagination button:disabled {
+  @apply bg-zinc-300 cursor-not-allowed;
+}
+
+/* Clase utilitaria personalizada */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

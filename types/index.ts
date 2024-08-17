@@ -6,9 +6,8 @@ export interface IUser {
 }
 
 export interface IPost {
-  _id: string;
-  id: number;
-  userId: number;
+  id: string | number; // ID puede ser string o número
   title: string;
   body: string;
+  userId?: number;
 }
