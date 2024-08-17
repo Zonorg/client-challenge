@@ -22,7 +22,8 @@ body {
   @apply flex flex-col justify-center items-center gap-3 p-5 shadow-md w-72;
 }
 
-.form input {
+.form input,
+td input {
   @apply border bg-transparent border-gray-400 px-2 py-1 w-full;
 }
 
@@ -30,11 +31,11 @@ body {
   @apply border bg-transparent border-gray-400 px-2 py-1 w-full h-24;
 }
 
-/* Aplicando estilos básicos y transiciones */
+/* Transicion para los botones azules, al pasar el cursor se crea un efecto de transición de color */
 .form button {
   @apply flex items-center gap-2 relative border border-zinc-900 overflow-hidden bg-zinc-50 text-zinc-800 text-lg px-4 py-2 transition-colors duration-300;
-  position: relative; /* Asegura que el pseudo-elemento se posicione correctamente */
-  z-index: 1; /* Asegura que el texto esté encima del pseudo-elemento */
+  position: relative;
+  z-index: 1;
 }
 
 /* Estilo del pseudo-elemento para el efecto de transición de color */
@@ -43,7 +44,7 @@ body {
   @apply absolute inset-0 bg-blue-500 border;
   @apply transform -translate-x-full;
   transition: transform 0.3s ease;
-  z-index: -1; /* Coloca el pseudo-elemento detrás del texto */
+  z-index: -1;
 }
 
 /* Transición del pseudo-elemento al pasar el cursor */
@@ -82,9 +83,6 @@ body {
   @apply bg-zinc-300 cursor-not-allowed;
 }
 
-/* Clase utilitaria personalizada */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+td input {
+  @apply p-2 border border-gray-300 rounded;
 }

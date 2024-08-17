@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { IFilterInputProps } from "@/types";
+import { FilterInputProps } from "@/types";
 
-export default function FilterInput({ data, filterKeys, onFilter, placeholder }: IFilterInputProps) {
+export default function FilterInput({ data, filterKeys, onFilter, placeholder }: FilterInputProps) {
   const [filterText, setFilterText] = useState("");
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {

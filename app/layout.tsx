@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={clsx("min-h-screen bg-background font-sans antialiased")}>
         <div className="relative flex flex-col h-screen">
           <Navbar />
-          <main className="container mx-auto max-w-7xl pt-8 px-6 flex-grow">{children}</main>
+          <main className="container mx-auto max-w-7xl py-8 px-6 flex-grow">{children}</main>
         </div>
       </body>
     </html>

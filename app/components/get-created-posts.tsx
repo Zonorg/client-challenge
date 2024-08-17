@@ -33,7 +33,7 @@ export default function GetCreatedPosts() {
       <table className="table">
         <thead>
           <tr>
-            <th>ID Usuario</th>
+            <th>ID</th>
             <th>Título</th>
             <th>Descripción</th>
             <th>Acciones</th>
@@ -41,7 +41,7 @@ export default function GetCreatedPosts() {
         </thead>
         <tbody>
           {filteredPosts.map((post) => (
-            <Post key={post.id} post={post} onDelete={getPosts} />
+            <Post key={post.id} post={post} onDelete={getPosts} onUpdate={getPosts}/>
           ))}
         </tbody>
       </table>

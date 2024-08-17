@@ -57,7 +57,7 @@ export default function ApiPosts() {
         <table className="table">
           <thead>
             <tr>
-              <th>ID Usuario</th>
+              <th>ID</th>
               <th>Título</th>
               <th>Descripción</th>
             </tr>

@@ -6,7 +6,7 @@ type PaginationProps = {
 export const limit = 10;
 const total_posts = 100;
 
-const Pagination = ({ page, setPage }: PaginationProps) => {
+export default function Pagination({ page, setPage }: PaginationProps) {
   const handlePrevious = () => setPage((prevPage) => Math.max(prevPage - 1, 1));
   const handleNext = () => setPage((prevPage) => prevPage + 1);
 
@@ -20,6 +20,4 @@ const Pagination = ({ page, setPage }: PaginationProps) => {
       </button>
     </div>
   );
-};
-
-export default Pagination;
+}

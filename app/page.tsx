@@ -1,8 +1,12 @@
+// Pagina principal
+// Aqui se renderizan y filtran los dos componentes principales, ApiPosts y CreatedPosts
+// Si el usuario no ha iniciado sesion, se redirige a la página de login
+
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import ApiPosts from "./posts-views/api-posts-view";
-import CreatedPosts from "./posts-views/created-posts-view";
+import ApiPosts from "./views/api-posts-view";
+import CreatedPosts from "./views/created-posts-view";
 
 export default function Home() {
   const router = useRouter();

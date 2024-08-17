@@ -25,7 +25,7 @@ export default function DeletePost({ postId, onDelete }: DeletePostProps) {
   return (
     <button
       onClick={handleDelete}
-      className="bg-red-500 text-white font-semibold px-4 py-2 rounded flex items-center gap-2"
+      className="bg-red-500 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded flex items-center gap-2 w-28"
     >
       Eliminar <FaTrash />
     </button>
