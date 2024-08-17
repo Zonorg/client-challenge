@@ -47,7 +47,7 @@ Este proyecto se desarrolla utilizando Node/Express y React con TypeScript tanto
 
     ```
    DATABASE_URL=mongodb+srv://zonorg:794613258@cluster0.masr3or.mongodb.net/practice?retryWrites=true&w=majority&appName=Cluster0
-   PORT=8080 (U otro puerto a elección, si no se coloca ninguno por defecto será 8080)
+   PORT=8080
    ```
 
 4. **Ejecutar el Backend**
@@ -55,7 +55,7 @@ Este proyecto se desarrolla utilizando Node/Express y React con TypeScript tanto
    npm start
    ```
 
-- El backend estará corriendo en http://localhost:[PUERTO_DEL_SERVIDOR].
+- El backend estará corriendo en http://localhost:8080.
 
 ### Frontend
 
