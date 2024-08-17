@@ -45,8 +45,10 @@ Este proyecto se desarrolla utilizando Node/Express y React con TypeScript tanto
 3. **Configurar Variables de Entorno**
    Crea un archivo .env en el directorio raíz del backend y agrega las siguientes variables:
 
+    ```
    DATABASE_URL=mongodb+srv://zonorg:794613258@cluster0.masr3or.mongodb.net/practice?retryWrites=true&w=majority&appName=Cluster0
    PORT=8080 (U otro puerto a elección, si no se coloca ninguno por defecto será 8080)
+   ```
 
 4. **Ejecutar el Backend**
    ```
@@ -72,9 +74,11 @@ Este proyecto se desarrolla utilizando Node/Express y React con TypeScript tanto
    ```
 
 3. **Configurar Variables de Entorno**
-   Crea un archivo .env.local en el directorio raíz del frontend y agrega las siguientes variables:
+   Crea un archivo .env.local en el directorio raíz del frontend y agrega la siguientes variable:
 
-   NEXT_PUBLIC_API_URL="http://localhost:8080/api" (O el puerto que se haya seleccionado)
+    ```
+   NEXT_PUBLIC_API_URL="http://localhost:8080/api"
+   ```
 
 4. **Ejecutar el Frontend**
    ```
