@@ -3,7 +3,7 @@ import DeletePost from "./delete-post";
 
 type PostProps = {
   post: IPost;
-  onDelete: () => void;
+  onDelete?: () => void;
 };
 
 const Post = ({ post, onDelete }: PostProps) => {
@@ -19,7 +19,7 @@ const Post = ({ post, onDelete }: PostProps) => {
       <td>{userId ? userId : "N/A"}</td>
       <td>{truncateText(title, 30)}</td>
       <td>{truncateText(body, 30)}</td>
-      {typeof post.id !== "number" && (
+      {typeof post.id !== "number" && onDelete && (
         <td>
           <DeletePost postId={post._id} onDelete={onDelete} />
         </td>
