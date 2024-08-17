@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Prueba Técnica
 
-## Getting Started
+Desarrollar una aplicación web utilizando un backend en Express con MongoDB y un frontend en React. La aplicación debe permitir la realización de operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre una entidad principal, basada en datos consumidos desde una API gratuita y la DB Mongo. La aplicación debe estar desarrollada completamente en TypeScript.
 
-First, run the development server:
+## Descripción del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este proyecto se desarrolla utilizando Node/Express y React con TypeScript tanto para el backend como para el frontend. Utiliza MongoDB como base de datos.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Registro y Autenticación de Usuarios**: Permite a los usuarios registrarse, iniciar sesión y gestionar su autenticación.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Operaciones CRUD**: Permite crear, leer, actualizar y eliminar datos en la base de datos MongoDB.
 
-## Learn More
+- **Integración con API Externa**: Obtiene datos desde una API externa, los almacena en la base de datos local y permite su visualización y edición.
 
-To learn more about Next.js, take a look at the following resources:
+- **Interfaz de Usuario**: Una interfaz React para interactuar con el backend y realizar operaciones CRUD.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Animaciones**: Algunos botones como el inicio de sesión y regístro cuentan con animaciones css de transiciones y otros como spinner de carga en la obtención de datos desde la API externa.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Documentación de la API con Swagger**: Desde la ruta /api/v1/docs/ del servidor, puede verse las documentación de las rutas con los métodos detallados y los parámetros a insertar en cada una.
 
-## Deploy on Vercel
+- **Bcrypt**: De utilizó la librería bcrypt en lugar de crypto-js para la encriptación de password de los usuarios registrados en el sistema, la funcionalidad en sí es la misma.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Paginación**: En la obtención de publicaciones desde la API externa, se realizó un paginado que se filtra por querys, donde desde el front se le indica la página, el número de publicaciones obtenidas por página y las publicaciones totales.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Ejecución del Proyecto
+
+### Backend
+
+1. **Clonar el Repositorio**
+
+   ```bash
+   git clone https://github.com/Zonorg/server-challenge.git
+   ```
+
+2. **Instalar Dependencias**
+
+   Sobre el directorio raíz
+
+   ```bash
+   npm install
+   ```
+
+3. **Configurar Variables de Entorno**
+   Crea un archivo .env en el directorio raíz del backend y agrega las siguientes variables:
+
+   DATABASE_URL=mongodb+srv://zonorg:794613258@cluster0.masr3or.mongodb.net/practice?retryWrites=true&w=majority&appName=Cluster0
+   PORT=8080 (U otro puerto a elección, si no se coloca ninguno por defecto será 8080)
+
+4. **Ejecutar el Backend**
+   ```
+   npm start
+   ```
+
+- El backend estará corriendo en http://localhost:[PUERTO_DEL_SERVIDOR].
+
+### Frontend
+
+1. **Clonar el Repositorio**
+
+   ```bash
+   git clone https://github.com/Zonorg/client-challenge.git
+   ```
+
+2. **Instalar Dependencias**
+
+   Sobre el directorio raíz
+
+   ```bash
+   npm install
+   ```
+
+3. **Configurar Variables de Entorno**
+   Crea un archivo .env.local en el directorio raíz del frontend y agrega las siguientes variables:
+
+   NEXT_PUBLIC_API_URL="http://localhost:8080/api" (O el puerto que se haya seleccionado)
+
+4. **Ejecutar el Frontend**
+   ```
+   npm run build
+   npm start
+   ```
+
+- El frontend estará corriendo en http://localhost:3000 por defecto.
+
+
+## URL del Sitio
+
+- **Frontend**: https://client-challenge.vercel.app/
+- **Backend**: https://server-challenge.onrender.com/
+
+*Es probable que el backend tarde unos minutos en cargar, ya que es un servidor gratuito y se cierra al haber inactividad.
