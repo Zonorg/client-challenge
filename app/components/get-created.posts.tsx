@@ -29,11 +29,12 @@ export default function GetCreatedPosts() {
             <th>ID Usuario</th>
             <th>Título</th>
             <th>Descripción</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           {posts.map((post) => (
-            <Post key={post.id} post={post} />
+            <Post key={post.id} post={post} onDelete={getPosts}/>
           ))}
         </tbody>
       </table>

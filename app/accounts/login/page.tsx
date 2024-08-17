@@ -30,7 +30,7 @@ export default function Login() {
       <h1>Iniciar sesión</h1>
       <form onSubmit={handleLogin} className="form">
         <input type="text" id="username" name="username" placeholder="Nombre de usuario" />
-        <input type="text" id="password" name="password" placeholder="Contraseña" />
+        <input type="password" id="password" name="password" placeholder="Contraseña" />
         <button type="submit">
           Iniciar sesión <AiOutlineRight />
         </button>
